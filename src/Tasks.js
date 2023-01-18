@@ -43,6 +43,10 @@ function Tasks() {
 		setOverride(true);
 	};
 
+	const handleRevertStatus = () => {
+		setOverride(false);
+	};
+
 	useEffect(() => {
 		getTasks();
 		getStatuses();
@@ -63,7 +67,7 @@ function Tasks() {
 							<Grid container spacing={2}>
 								<Grid xs={12}>
 										<h1>Categories and Tasks</h1>
-										<Button onClick={handleOverride} variant="contained">Override Statuses</Button>
+										<Button onClick={!override ? handleOverride : handleRevertStatus } variant="contained">Override Statuses</Button>
 								</Grid>
 									<Grid xs={4}>
 										<h3>HTML</h3>
